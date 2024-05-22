@@ -14,7 +14,7 @@ import java.util.*;
 
 public class HT10 {
     public static void main(String[] args) {
-        Grafo grafo = leerGrafoDesdeArchivo("guategrafo.txt");
+        Grafo grafo = leerGrafoDesdeArchivo("C:\\Users\\Oscar Escriba\\Desktop\\HT10-ED-Oscar-Escrib-\\HT10\\src\\main\\java\\com\\mycompany\\ht10\\guategrafo.txt");
 
         FloydWarshall.floydWarshall(grafo);
 

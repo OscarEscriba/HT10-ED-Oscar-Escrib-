@@ -25,13 +25,17 @@ public class Grafo {
             matrizAdyacencia[i][i] = 0; // La distancia desde una ciudad a sí misma es 0.
         }
     }
-
+    
     public void agregarCiudad(String ciudad) {
-        if (!indices.containsKey(ciudad)) {
-            indices.put(ciudad, ciudades.size());
-            ciudades.add(ciudad);
-        }
+    if (!indices.containsKey(ciudad)) {
+        indices.put(ciudad, ciudades.size());
+        ciudades.add(ciudad);
+        System.out.println("Ciudad agregada correctamente: " + ciudad);
+    } else {
+        System.out.println("La ciudad ya existe en el grafo: " + ciudad);
     }
+}
+    
 
     public void agregarArco(String origen, String destino, int distancia) {
         int i = indices.get(origen);
@@ -52,8 +56,13 @@ public class Grafo {
     public List<String> getCiudades() {
         return ciudades;
     }
-
+    
     public int getIndiceCiudad(String ciudad) {
-        return indices.get(ciudad);
+    Integer indice = indices.get(ciudad);
+    if (indice == null) {
+        System.out.println("La ciudad no se encuentra en el mapa de índices: " + ciudad);
     }
+    return indice;
+   }
+    
 }
